@@ -4,6 +4,9 @@ require_relative '../boot'
 
 require 'lib/tasks/db'
 require 'database_cleaner'
+require 'capybara/rspec'
+
+Capybara.app = Application
 
 RSpec.configure do |config|
   config.order = 'random'

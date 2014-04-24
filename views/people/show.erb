@@ -1,0 +1,20 @@
+<div class="actions">
+  <a href="/people/<%= person[:id] %>/edit">Edit</a>
+
+  <form action="/people/<%= person[:id] %>" method="post" class="delete-form">
+    <input type="hidden" name="_method" value="delete" />
+    <input type="submit" value="Delete">
+  </form>
+
+</div>
+
+<h1>Showing Person</h1>
+
+<dl class="attributes">
+  <dt>First Name</dt>
+  <dd><%= person[:first_name] %></dd>
+  <dt>Last Name</dt>
+  <dd><%= person[:last_name] %></dd>
+  <dt>Date of Birth</dt>
+  <dd><%= person[:date_of_birth] ? person[:date_of_birth].strftime("%-m/%-d/%Y") : nil %></dd>
+</dl>

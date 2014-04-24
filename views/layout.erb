@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/application.css" rel="stylesheet" type="text/css">
+  <title>Sinatra CRUD Demo</title>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/application.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div>
-  <%= yield %>
+  <header>
+    <div class="container-inner">
+      <a class="brand" href="/">Rails Demo App</a>
+    </div>
+  </header>
+  <main>
+    <div class="container-inner">
+      <%= yield %>
+    </div>
+  </main>
 </div>
 </body>
 </html>

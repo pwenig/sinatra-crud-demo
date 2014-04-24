@@ -1,0 +1,23 @@
+<h1>Add Person</h1>
+
+<form action="/people" method="post">
+
+  <p>
+    <label for="person_first_name" class="form-label">First name</label>
+    <input name="person[first_name]" id="person_first_name">
+  </p>
+
+  <p>
+    <label for="person_last_name" class="form-label">Last name</label>
+    <input name="person[last_name]" id="person_last_name">
+  </p>
+
+  <p>
+    <label for="person_date_of_birth" class="form-label">Date of birth</label>
+    <input name="person[date_of_birth]" id="person_date_of_birth">
+  </p>
+
+  <p>
+    <input type="submit" value="Create Person" class="form-button">
+  </p>
+</form>

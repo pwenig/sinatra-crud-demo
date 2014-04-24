@@ -1,3 +1,90 @@
-body {
-    background-color: orange;
+html, body {
+  background: #efefef;
+}
+
+header {
+  background: #333;
+}
+
+a.brand {
+  color: gold;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+main .container-inner {
+  background: white;
+}
+
+.container-inner {
+  margin: auto;
+  width: 960px;
+  padding: 1em;
+}
+
+.attributes {
+  overflow: auto;
+}
+
+.form-label {
+  display: inline-block;
+  width: 100px;
+}
+
+.form-button {
+  margin-left: 105px;
+}
+
+.attributes > dt {
+  clear: left;
+  display: block;
+  float: left;
+  width: 100px;
+  padding-bottom: 1em;
+  font-weight: bold;
+}
+
+.attributes > dt:after {
+  content: ':';
+}
+
+.attributes > dd {
+  float: left;
+}
+
+.actions {
+  float: right;
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+.actions form.delete-form {
+  display: inline-block;
+}
+
+.table-standard {
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.table-standard td, .table-standard th {
+  padding: .5em;
+  border: 1px solid #ccc;
+}
+
+.errors {
+  background: #efefef;
+  border: 1px solid maroon;
+}
+
+.errors h1 {
+  margin: 0;
+  padding: .5em;
+  font-size: 1em;
+  background: maroon;
+  color: white;
+}
+
+.error-list {
+  color: black;
 }
