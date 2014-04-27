@@ -1,5 +1,7 @@
 # Sinatra template application
 
+This is a sample CRUD Sinatra app that allows user to create, update, and delete a list of favorite songs, albums and realease dates.
+
 This application can be used as a starting point for a [Postgres](http://www.postgresql.org/)
 database backed, via [Sequel](http://sequel.jeremyevans.net/), application that uses
 [Sinatra](http://www.sinatrarb.com/). It can be deployed to [Heroku](https://www.heroku.com/).
