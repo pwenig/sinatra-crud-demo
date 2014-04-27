@@ -1,0 +1,9 @@
+<h1>Edit Song</h1>
+
+  <form action="/songs/<%= @songs[:id]%>/edit" method='post'>
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="song[title]" id="song_title" value="<%= @songs[:title] %>">
+    <input type="text" name="song[album]" id="song_album" value="<%= @songs[:album] %>">
+    <input type="text" name="song[date_of_release]" id="song_date_of_release" value="<%= @songs[:date_of_release] %>">
+    <input type="submit" value="Edit Song">
+</form>

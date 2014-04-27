@@ -1,53 +1,48 @@
 require 'sinatra/base'
-
 class Application < Sinatra::Application
 
   get '/' do
+    @songs = DB[:songs].to_a
     erb :index
+
   end
 
-  get '/people' do
-    people = DB[:people].to_a
-    erb :"people/index", locals: { people: people }
+  get '/new' do
+    erb :new
   end
 
-  get '/people/new' do
-    erb :"people/new"
-  end
-
-  post '/people' do
-    date_of_birth = params[:person][:date_of_birth]
-    DB[:people].insert(
-      first_name: params[:person][:first_name],
-      last_name: params[:person][:last_name],
-      date_of_birth: date_of_birth.empty? ? nil : date_of_birth,
+  post '/' do
+    DB[:songs].insert(
+    title: params[:song][:title],
+    album: params[:song][:album],
+    date_of_release: params[:song][:date_of_release],
     )
-    redirect '/people'
+    redirect '/'
   end
 
-  get '/people/:id' do
-    person = DB[:people].where(id: params[:id]).first
-    erb :"people/show", locals: { person: person }
+  get '/songs/:id' do
+  @songs = DB[:songs].where(id: params[:id]).first
+    erb :show
   end
 
-  get '/people/:id/edit' do
-    person = DB[:people].where(id: params[:id]).first
-    erb :"people/edit", locals: { person: person }
-  end
+get '/songs/:id/edit' do
+  @songs = DB[:songs].where(id: params[:id]).first
+  erb :edit
+end
 
-  put '/people/:id' do
-    date_of_birth = params[:person][:date_of_birth]
-    DB[:people].where(id: params[:id]).update(
-      first_name: params[:person][:first_name],
-      last_name: params[:person][:last_name],
-      date_of_birth: date_of_birth.empty? ? nil : date_of_birth,
+  put '/songs/:id/edit' do
+    @songs = DB[:songs].where(id: params[:id]).update(
+      title: params[:song][:title],
+      album: params[:song][:album],
+      date_of_release: params[:song][:date_of_release],
     )
-    redirect "/people/#{params[:id]}"
+    redirect '/'
   end
 
-  delete '/people/:id' do
-    DB[:people].where(id: params[:id]).delete
-    redirect "/people"
+  delete '/songs/:id' do
+    @songs = DB[:songs].where(id: params[:id]).delete
+    redirect '/'
   end
 
 end
+

@@ -1,7 +1,32 @@
-<p>
-  Welcome!
-</p>
+<div class="actions">
+  <a href="/new">Add New Song</a>
+</div>
 
-<ul>
-  <li><a href="/people">People</a></li>
-</ul>
+<h1>Songs</h1>
+
+<table class="table-standard">
+  <thead>
+  <tr>
+
+    <th>Song Title</th>
+      <th>Album</th>
+      <th>Date of Release</th>
+    <% @songs.each do |song| %>
+      <th><a href="/songs/<%= song[:id] %>">
+        <%= song[:title] %></a></th>
+      <th><a href="/songs/<%= song[:id] %>">
+        <%= song[:album] %></a></th>
+      <th><%= song[:date_of_release] %></th>
+  </tr>
+    <% end %>
+    </thead>
+  <tbody>
+
+  </tbody>
+</table>
+
+
+
+
+
+

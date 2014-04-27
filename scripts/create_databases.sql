@@ -1,5 +1,5 @@
-CREATE DATABASE sinatra_crud_demo_development
+CREATE DATABASE songs_development
 WITH OWNER = gschool_user;
 
-CREATE DATABASE sinatra_crud_demo_test
+CREATE DATABASE songs_test
 WITH OWNER = gschool_user;
